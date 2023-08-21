@@ -11,7 +11,6 @@ export default function Home() {
     const [ranking, setRanking] = useState([]);
     const navigate = useNavigate();
 
-
     useEffect(() => {
         if(!token) return navigate("/not-logged-in");
         async function getRanking() {
