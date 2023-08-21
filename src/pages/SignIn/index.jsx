@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { styled } from "styled-components";
 import api from "../../services/api"
 import { AuthContext } from "../../contexts";
-import gol from "../../assets/gol.jpeg";
+import gol from "../../assets/gol.jpg";
 
 
 export default function SignIn({setIsLogged}) {
@@ -29,7 +29,7 @@ export default function SignIn({setIsLogged}) {
     }
 
     return (
-        <Container imageUrl={gol}>
+        <Container >
         
             <InputBox onSubmit={toEnter}>
                 <span>Entre em campo!</span>
@@ -37,7 +37,6 @@ export default function SignIn({setIsLogged}) {
                 <Input type="password" name="password" placeholder="senha" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <LoginButton>Entrar</LoginButton>
                 <LinkStyled to='/sign-up'>Não tem conta? Cadastre-se!</LinkStyled>
-
             </InputBox>
         </Container>
     )
@@ -47,7 +46,7 @@ export const LoginButton = styled.button`
     width:180px;
     height:50px;
     border-radius: 5px;
-    background-color: rgb(80, 132, 24);
+    background-color: rgb(23, 39, 5);
     border-color: rgb(173, 228, 115);
     color:white;
     &:hover{
@@ -64,7 +63,7 @@ export const Container = styled.div`
     align-items: center;
     position: fixed;
     top: 80px;
-    background-image: url(${props => props.imageUrl});
+    background-image: url(${gol});
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -84,6 +83,9 @@ export const InputBox = styled.form`
         margin-bottom: 20px;
         font-size: 20px;
     }    
+    @media(max-width: 768px){
+        width: 80%;
+    }
 `;
 
 export const Input = styled.input`
@@ -97,7 +99,6 @@ export const Input = styled.input`
     padding: 8px;
 
 `;
-
 export const LinkStyled = styled(Link)`
     margin-top: 10px;
     color: rgb(42, 70, 11);

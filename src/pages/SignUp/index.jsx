@@ -17,15 +17,16 @@ export default function SignUp() {
         if(password !== confirmPassword) return alert("As senhas precisam ser iguais! Confirme a senha desejada")
         const data = { name, email, password, confirmPassword, foto };
         try {
-            await api.signUp(data);            
+            await api.signUp(data);              
+                     
         } catch (error) {
             alert(error.message);
         }
 
     }
     return (
-        <LoginContainer>
-            <TitleBox>O lugar pra torcer com os amigos!</TitleBox>
+        <Container>
+            <Title>Crie sua conta e comece a jogar!</Title>
             <InputBox onSubmit={register}>
                 <Input type="text" name="name" placeholder="Nome" value={name} onChange={(e) => setName(e.target.value)} />
                 <Input type="email" name="email" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -33,50 +34,77 @@ export default function SignUp() {
                 <Input type="password" name="password" placeholder="Confirme a senha" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                 <Input type="foto" name="foto" placeholder="Imagem de usuário" value={foto} onChange={(e) => setfoto(e.target.value)} />
 
-                <LoginButton>Cadastrar</LoginButton>
-                <Link onClick={() => navigate('/sign-in')}>Já tem uma conta? Faça login</Link>
+                <Button>Cadastrar</Button>
+                <Link onClick={() => navigate('/sign-in')}>Já tem uma conta? Faça login </Link>
 
             </InputBox>
-        </LoginContainer>
+        </Container>
     )
 }
 
-
-export const LoginButton = styled.button`
-    width:80;
-    height:12px;
+export const Title = styled.div`
+    width: 20%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#389456;
+    font-size: 35px;
+    @media(max-width:768px){
+        font-size: 18px;
+        margin-right: 5px;
+    }
+`
+export const Button = styled.button`
+    width:12rem;
+    height:3rem;
     border-radius: 5px;
-    background-color: cyan;
+    background-color: #389456;
     color:white;
+    margin-bottom: 8px;
+    margin-top: 5px;
     &:hover{
         background-color: black;
     }	    
 `;
-
-export const LoginContainer = styled.div`
-    height: 100%;
-    display: flex;   	
+export const Container = styled.div`
+    width: 100vw;
+    margin-top: 80px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
 export const InputBox = styled.form`
-    width: 200px;
     display: flex;
     flex-direction: column;
+    height: 60%;
+    width: 23%;
     align-items: center;
     justify-content: center;
-    
+    @media(max-width: 768px){
+        width: 60%;
+    }
 `;
-
 export const Input = styled.input`
-    width: 80px;
-    height: 20px;
+    width: 100%;
+    height: 10%;
     border-radius: 8px;
+    margin-bottom: 10px;
+    border-color: #389456;
+    padding-left: 10px;
+    &::placeholder{
+        padding: 5px;
+    }
 `;
-
-export const Link = styled.h1`
-    color:white
+export const Link = styled.span`
+    color: #389456;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
     &:hover{
         text-decoration: underline;
-    }	
+}	
 `;
 
 
