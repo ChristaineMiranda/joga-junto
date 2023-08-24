@@ -4,6 +4,7 @@ import { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../../contexts";
 import { useNavigate } from "react-router-dom";
 import PreviewGroupModal from "../../components/Modals/PreviewGroupModal";
+import {OptionsButtons, JoinButton, CreatorPicture, ContainerAllGroups, CreatorInfos, GroupInfos, GroupListedBox, LowerBox} from "./style";
 
 export default function AllGroups() {
     const [groupsList, setGroupsList] = useState([]);
@@ -20,9 +21,7 @@ export default function AllGroups() {
             } catch (error) {
                 console.log(error);
             }
-
         }
-
         getAllGroups()
     }, []);
 
@@ -75,92 +74,7 @@ function GroupListed({ item }) {
                 </OptionsButtons>
             </LowerBox>
         </GroupListedBox>
-    )
+    );
 }
 
 
-const OptionsButtons = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 50%;
-    height: 100%;    
-    button{
-        width: 70px;
-        height: 38px;
-        border-radius: 5px;
-        border-color: #FFFFFF;
-        font-size: 10px;
-        font-weight: 900;
-        color: #FFFFFF;
-    }
-`;
-const JoinButton = styled.button`
-    background-color:${props => props.disabled ? "#4CBAAB" : "#F7B13E"};
-`;
-const CreatorPicture = styled.img`
-    width: 40px;
-    border-radius: 100px;
-    margin-right: 10px;
-    border-color: #FFFFFF;
-    border-width: 2px;
-    border-style: solid;
-`;
-const ContainerAllGroups = styled.div`
-width:99vw;
-min-height: 100vh;
-margin-top: 80px;
-display: flex;
-flex-wrap: wrap;
-justify-content: space-around;
-@media(max-width: 768px){
-    flex-direction: column;
-    align-items: center;
-    margin-top: 110px;
-}
-`;
-const CreatorInfos = styled.div`
-display:flex;
-align-items: center;
-justify-content: flex-start;
-`;
-const GroupInfos = styled.div`
-display: flex;
-align-items: center;
-justify-content: space-around;
-margin-top: 20px;
-border-bottom-style:dotted;
-border-bottom-width:1px;
-border-bottom-color: #022e02;
-padding-bottom: 10px;
-&>:nth-child(1){
-font-weight:600;
-background-color: #e7e6e6;
-padding: 8px;
-border-radius: 8px;
-}
-`;
-const GroupListedBox = styled.div`
-display:flex;
-flex-direction: column;
-width: 25%;
-height: 112px;
-margin: 15px;
-border-radius: 8px;
-border-style: solid;
-border-color: purple;
-border-width: 1px;
-:hover{
-    cursor: pointer;
-}
-@media (max-width: 768px) {
-    height:110px ;
-    width: 70%;
-}
-`;
-const LowerBox = styled.div`
-    display: flex;
-    height: 100%;
-    justify-content: space-between;
-   
-`;

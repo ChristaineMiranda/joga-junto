@@ -6,7 +6,7 @@ import SignUp from "./pages/SignUp";
 import InitialPage from "./pages/InitialPage";
 import AuthProvider from "./contexts";
 import Home from "./pages/Home";
-import Matches from "./pages/Matches";
+import AllMatches from "./pages/AllMatches";
 import GroupSelected from "./pages/GroupSelected";
 import NotLoggedIn from "./pages/NotLoggedIn";
 import AllGroups from "./pages/AllGroups";
@@ -27,7 +27,7 @@ export default function App() {
             <Route path="/sign-in" element={<SignIn setIsLogged={setIsLogged}/>} />
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="/home" element={<Home/>} />
-            <Route path="/matches" element={<Matches/>}/>
+            <Route path="/matches" element={<AllMatches/>}/>
             <Route path="/group-selected/:idGroup" element={<GroupSelected/>}/>
             <Route path="/group-all" element={<AllGroups/>}/>
             <Route path="/not-logged-in" element={<NotLoggedIn/>}/>

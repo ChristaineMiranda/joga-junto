@@ -1,10 +1,10 @@
-import  styled  from "styled-components";
 import api from "../../services/api";
 import { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../../contexts";
 import { useNavigate } from "react-router-dom";
 import GroupComponent from "../GroupComponent";
 import NewGroupModal from "../Modals/NewGroupModal";
+import {GroupContainer, Container} from "./style";
 
 
 export default function MyGroups() {
@@ -44,25 +44,4 @@ export default function MyGroups() {
 }
 
 
-const GroupContainer = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
-`;
-
-const Container = styled.div`
-width: 100%;
-min-height: 100vh;
-display: flex;
-flex-direction: column;
-align-items: center;
-padding-top: 20px;
-overflow-y: auto;
-p {
-    font-size: 20px;
-}
-`;
 
