@@ -7,13 +7,17 @@ export const OptionsButtons = styled.div`
     width: 50%;
     height: 100%;    
     button{
-        width: 70px;
+        width: 65px;
         height: 38px;
         border-radius: 5px;
         border-color: #FFFFFF;
         font-size: 10px;
         font-weight: 900;
         color: #FFFFFF;
+    }
+    @media(max-width: 768px){
+        width: 55%;
+        margin-right: 5px;
     }
 `;
 export const JoinButton = styled.button`
@@ -26,6 +30,9 @@ export const CreatorPicture = styled.img`
     border-color: #FFFFFF;
     border-width: 2px;
     border-style: solid;
+    @media(max-width:768px){
+        width: 35px;
+    }
 `;
 export const ContainerAllGroups = styled.div`
 width:99vw;
@@ -44,6 +51,10 @@ export const CreatorInfos = styled.div`
 display:flex;
 align-items: center;
 justify-content: flex-start;
+font-size: 15px;
+@media(max-width: 768px){
+    font-size: 13px;
+}
 `;
 export const GroupInfos = styled.div`
 display: flex;
@@ -60,12 +71,18 @@ background-color: #e7e6e6;
 padding: 8px;
 border-radius: 8px;
 }
+&>:nth-child(2){
+    color: #af5aaf;
+    @media(max-width: 768px){
+        font-size: 11px;
+    }
+}
 `;
 export const GroupListedBox = styled.div`
 display:flex;
 flex-direction: column;
 width: 25%;
-height: 112px;
+height: 120px;
 margin: 15px;
 border-radius: 8px;
 border-style: solid;
@@ -75,7 +92,7 @@ border-width: 1px;
     cursor: pointer;
 }
 @media (max-width: 768px) {
-    height:110px ;
+    height:140px ;
     width: 70%;
 }
 `;
