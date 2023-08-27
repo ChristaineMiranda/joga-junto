@@ -24,9 +24,9 @@ export const JoinButton = styled.button`
     background-color:${props => props.disabled ? "#4CBAAB" : "#F7B13E"};
 `;
 export const CreatorPicture = styled.img`
-    width: 40px;
+    width: 25px;
     border-radius: 100px;
-    margin-right: 10px;
+    margin-right: 2px;
     border-color: #FFFFFF;
     border-width: 2px;
     border-style: solid;

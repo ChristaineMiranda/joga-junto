@@ -7,6 +7,7 @@ export default function timeConverter(dateTime) {
     const hour = brasiliaDate.c.hour;
     const minute = brasiliaDate.c.minute;
     const dateFormat = day + '/' + month;
-    const timeFormat = hour + "h" + minute;
+    let timeFormat = hour + "h" + minute;
+    if(!minute) timeFormat = timeFormat + "0";
     return { dateFormat, timeFormat };
 }

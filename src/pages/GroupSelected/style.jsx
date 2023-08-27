@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const GroupName = styled.div`
-background-color:#04032b;
+background-color:#070541;
 height: 20%;
 color: #FFFFFF;
 display: flex;
@@ -30,18 +30,7 @@ img{
     }
 }
 `;
-export const Position = styled.div`
-    display: flex;
-    justify-content: center;
-    width: 10%;
-    height: 100%;
-    align-items: center;
-    color: white;
-    font-size: 16px;
-    font-weight: bolder;
-    border-radius: 8px;
-    background-color: #a7a9fc;
-`;
+
 export const Info = styled.div`
 display: flex;
 width: 88%;

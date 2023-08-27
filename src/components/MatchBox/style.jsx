@@ -41,7 +41,7 @@ border-radius: 8px;
 export const SendButton = styled.button`
     width: 65%;
     height: 35px;
-    background-color: ${props => props.disabled ? "#1f1f1f" : "#036b03"};
+    background-color: ${props => props.disabled ? "#3a3939" : "#036b03"};
     color: #FFFFFF;
     font-weight: 500;
     border-radius: 5px;

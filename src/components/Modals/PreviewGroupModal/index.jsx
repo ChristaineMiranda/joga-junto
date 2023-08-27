@@ -3,7 +3,9 @@ Modal.setAppElement('#root');
 import { useState, useContext } from "react";
 import api from "../../../services/api";
 import { AuthContext } from "../../../contexts";
-import {GroupName, MemberBox, MemberContainer, PreviewButton, ModalStyle} from "./style";
+import { GroupName, MemberBox, MemberContainer, PreviewButton, ModalStyle, ContentModal } from "./style";
+import { CustomModal } from "../NewGroupModal/style";
+
 
 export default function PreviewGroupModal({ id, modalIsOpen, setModalIsOpen }) {
     const [preview, setPreview] = useState([]);
@@ -30,25 +32,27 @@ export default function PreviewGroupModal({ id, modalIsOpen, setModalIsOpen }) {
     return (
         <div>
             <PreviewButton onClick={openModalAndGetPreview}> Ver grupo</PreviewButton>
-            <Modal
+            <CustomModal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
                 contentLabel="Group preview"
                 style={ModalStyle}
             >
-                <GroupName>{groupName}</GroupName>
-                <MemberContainer>
-                    {preview.map((item, index) => <Member key={index} item={item}/>)}
-                </MemberContainer>
-            </Modal>
+                <ContentModal>
+                    <GroupName>{groupName}</GroupName>
+                    <MemberContainer>
+                        {preview.map((item, index) => <Member key={index} item={item} />)}
+                    </MemberContainer>
+                </ContentModal>
+            </CustomModal>
         </div>
     );
 }
 
-function Member({item}){
-    return(
+function Member({ item }) {
+    return (
         <MemberBox>
-            <img src={item.User.foto}/>
+            <img src={item.User.foto} />
             <div>{item.User.name}</div>
         </MemberBox>
     );

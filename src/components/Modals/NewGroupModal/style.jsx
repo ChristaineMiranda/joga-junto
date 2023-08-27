@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import Modal from 'react-modal';
+
 export const NewGroupButton = styled.button`
     width:100%;
     height: 50px;
@@ -11,7 +13,7 @@ export const NewGroupButton = styled.button`
     margin-bottom:20px;  
 `;
 export const ModalButton = styled.button`
-     width: 100px;
+    width: 100px;
     height: 50px;
     font-size: 14px;
     border-radius: 10px;
@@ -19,14 +21,18 @@ export const ModalButton = styled.button`
     color: #FFFFFF;
     font-weight: bolder;
     background-color: #1e5249;
+    margin-top: 10px;
 `;
+export const CustomModal = styled(Modal)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ `;
+
 export const ModalStyle = {
-    content: {
-        top:'20%',
-        bottom: '58%',
-        rigth: '30%',
-        left: '30%',
-        maxWidth: '400px',
+    content: {        
+        width: '350px',
+        height: '200px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-around',
@@ -36,13 +42,25 @@ export const ModalStyle = {
     },
     overlay: {
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        zIndex: '1000',
+        position: 'fixed',
+        top: '0',
+        bottom: '0',
+        rigth:'0',
+        left:'0',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',     
     }
 };
 export const InputModal = styled.input`
     width:90%;
-    height: 30px;
+    height: 40px;
     border-color: #d8ffa9;
     border-radius: 7px;
     
+`;
+export const TitleModal = styled.div`
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 5px;
 `;

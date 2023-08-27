@@ -1,9 +1,9 @@
 import { styled } from "styled-components";
 
 export const Info = styled.div`
-    background-color: rgb(236, 236, 234);
-    position: fixed;
-    bottom: 0;
+    background-color: #ececea;
+    height: 35%;
+    padding-bottom: 70px;
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -19,12 +19,16 @@ export const Info = styled.div`
         align-items: center;
         justify-content: center;
     }
+    @media(max-width: 768px){
+        padding-bottom: 20px;
+    }
 `;
 export const Principal = styled.div`
     display: flex;
     align-items: center;
     margin-top: 30px;
     margin-left: 50px;
+    height: 60%;
  img{
         border-radius: 100%;
         width: 250px;
@@ -34,6 +38,7 @@ export const Principal = styled.div`
 @media(max-width: 768px){
     flex-direction: column;
     margin-left: 0px;
+    justify-content: space-around;
     img{
         margin-bottom: 30px;
         margin-right: 0px;
@@ -51,7 +56,7 @@ export const Container = styled.div`
     background-color:rgb(129, 202, 45);
     display: flex;
     flex-direction: column;
-    
+    justify-content: space-evenly;
 `;
 export const Title = styled.div`
 font-size: 28px;

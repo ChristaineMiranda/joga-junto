@@ -2,7 +2,7 @@ import { useState, React, useContext }  from "react";
 import Modal from "react-modal";
 import api from "../../../services/api";
 import {AuthContext} from "../../../contexts";
-import {NewGroupButton, ModalButton, ModalStyle, InputModal} from "./style";
+import {NewGroupButton, ModalButton, ModalStyle, InputModal, TitleModal, CustomModal} from "./style";
 Modal.setAppElement('#root');
 
 
@@ -34,17 +34,17 @@ export default function NewGroupModal({modalIsOpen, setModalIsOpen}) {
     return (
         <div>
             <NewGroupButton onClick={openModal}> Criar novo grupo</NewGroupButton>
-            <Modal
+            <CustomModal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
             contentLabel="Create a new group"
             style={ModalStyle}
             >
-                <div>Escolha um nome para o seu grupo</div>
+                <TitleModal>Escolha um nome para o grupo</TitleModal>
                 <InputModal type="text" value={nameGroup} onChange={(e) => setNameGroup(e.target.value)} />
                 <ModalButton onClick={registerNewGroup}>Enviar</ModalButton>
 
-            </Modal>
+            </CustomModal>
 
         </div>
     )

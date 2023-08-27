@@ -3,14 +3,17 @@ import styled from "styled-components";
 export const GroupName = styled.div`
 font-weight:800;
 margin-bottom: 10px;
-color: #FFFFFF;
+color: #f57b09;
+`;
+export const ContentModal = styled.div`
+min-height:100%;
+margin: 15px;
 `;
 export const MemberContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fafafa;
-    height: 100%;
+    height: 20%;
     width: 100%;
 `;
 export const MemberBox = styled.div`
@@ -18,8 +21,11 @@ display: flex;
 margin-top: 10px;
 align-items: center;
 width: 100%;
+border-bottom: 1px solid #F5DEB3;
+padding-bottom: 2px;
 img{
-    width: 40px;
+    width: 25px;
+    height: 25px;
     border-radius: 100px;
     margin-right: 5px;
 }
@@ -29,20 +35,24 @@ export const PreviewButton = styled.button`
 `;
 export const ModalStyle = {
     content: {
-        rigth: '40%',
-        left: '40%',
-        maxWidth: '200px',
-        minHeight:'400px',
+        minHeight: '400px',
+        width: '230px',
         display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-around',
-        alignItems: 'center',
+        flexDirection: 'column',  
+        justifyContent: 'flex-start',    
         borderRadius: '10px',
-        backgroundColor: '#EC793D',
+        backgroundColor: '#FFFFFF',
         fontSize: '12px'
     },
     overlay: {
-        backgroundColor: 'rgba(0, 0, 0, 0.664)',
-        zIndex: '1000',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        position: 'fixed',
+        top: '0',
+        bottom: '0',
+        rigth: '0',
+        left: '0',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
     }
 };
